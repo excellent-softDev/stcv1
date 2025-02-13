@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izaka's Contacts | Start The Conversation</title>
+
+     <!-- Google Web Fonts -->
+       <!-- Favicon -->
+       <link href="assets/favicon_io/favicon.ico" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+        <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .logo-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .contact-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .contact-card img {
+            max-width: 120px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .contact-card h2 {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #a84300;
+        }
+        .contact-card p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .contact-card a {
+            color: #d35400;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .contacts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .img-fluid {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+    </style>
+</head>
+<body>
+
+
+     <!-- Spinner Start -->
+     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid top-bar px-5 d-none d-lg-block">
+        <div class="row gx-0 align-items-center" style="height: 45px;">
+            <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                <div class="d-flex flex-wrap">
+                    <a href="tel:011 282 0860" class="text-light me-4"><i class="fas fa-phone-alt text-white me-2"></i>011 282 0860</a>
+                    <a href="malto: info@stc.org.za" class="text-light me-0"><i class="fas fa-envelope text-white me-2"></i> info@stc.org.za</a>
+                </div>
+            </div>
+          
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-flex align-items-center justify-content-end">
+                    <a href="https://www.youtube.com/@stc101" class="btn  btn-square border rounded-circle nav-fill me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@stc101" class="btn  btn-square border rounded-circle nav-fill me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/@stc101" class="btn  btn-square border rounded-circle nav-fill me-0"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0  wow fadeIn" data-wow-delay="0.1s">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                
+                <img src="assets/images/stc logo.png" alt="STC logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link ">About Us</a>
+                    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">What we do</a>
+                        <div class="dropdown-menu m-0">
+                          <a href="services.html" class="dropdown-item">#MyMoneyMatters</a>
+                          <a href="services.html" class="dropdown-item">Orange Initiative</a>
+                            <a href="izaka-contacts.html" class="dropdown-item">Izaka Contacts</a>
+
+                        </div>
+                    </div>
+                    <!-- <a href="portolio.html" class="nav-item nav-link">Gallery</a> -->
+                    <a href="portolio.html" class="nav-item nav-link">Gallery</a>
+                </div>
+                <a href="contact.html" class="btn btn-primary rounded-pill text-dark py-2 px-4 flex-wrap flex-sm-shrink-0">CONTACT US</a>
+            </div>
+        </nav>
+      </div>
+ 
+
+<section class="top-scroll-btn">
+
+<img class="img-fluid" src="assets/images/EXT Organisation Logos/izaka-picture.jpg" alt="" srcset="">
+
+    <div class="container logo-container">
+        
+        <div class="contacts-grid">
+
+            <!-- FSCA -->
+            <div class="contact-card">
+                <img src="assets/images/EXT Organisation Logos/FSCA.png" alt="FSCA Logo">
+                <h2>Financial Sector Conduct Authority (FSCA)</h2>
+                <p>Website: <a href="https://www.fsca.co.za" target="_blank">www.fsca.co.za</a></p>
+                <p>Email: <a href="mailto:enquiries@fsca.co.za">enquiries@fsca.co.za</a></p>
+                <p>Phone: 080 0203 72</p>
+            </div>
+
+            <!-- OBS -->
+            <div class="contact-card">
+                <img src="assets/images/EXT Organisation Logos/OBS.png" alt="OBS Logo">
+                <h2>Ombudsman for Banking Services (OBS)</h2>
+                <p>Website: <a href="https://www.obssa.co.za" target="_blank">www.obssa.co.za</a></p>
+                <p>Email: <a href="mailto:info@obssa.co.za">info@obssa.co.za</a></p>
+                <p>Phone: 086 0800 900</p>
+            </div>
+
+            <!-- Credit Ombudsman -->
+            <div class="contact-card">
+                <img src="assets/images/EXT Organisation Logos/OMBUD.jpeg" alt="Credit Ombudsman Logo">
+                <h2>Credit Ombudsman (CO)</h2>
+                <p>Website: <a href="https://www.obssa.co.za" target="_blank">www.obssa.co.za</a></p>
+                <p>Email: <a href="mailto:info@obssa.co.za">info@obssa.co.za</a></p>
+                <p>SMS "Help" to 44786</p>
+            </div>
+
+            <!-- DCASA -->
+            <div class="contact-card">
+                <img src="assets/images/EXT Organisation Logos/DCASA.png" alt="DCASA Logo">
+                <h2>Debt Counselors Association of South Africa (DCASA)</h2>
+                <p>Website: <a href="https://www.dcasa.co.za" target="_blank">www.dcasa.co.za</a></p>
+                <p>Email: <a href="mailto:admin@dcasa.co.za">admin@dcasa.co.za</a></p>
+                <p>Phone: 086 1627 627</p>
+            </div>
+
+            <!-- SADAG -->
+            <div class="contact-card">
+                <img src="assets/images/EXT Organisation Logos/SADAG.jpeg" alt="SADAG Logo">
+                <h2>South African Depression and Anxiety Group (SADAG)</h2>
+                <p>Website: <a href="https://www.sadag.org" target="_blank">www.sadag.org</a></p>
+                <p>Email: <a href="mailto:zane@sadag.org">zane@sadag.org</a></p>
+                <p>Phone: 080 0456 789</p>
+            </div>
+
+            <!-- Lifeline -->
+            <div class="contact-card">
+                <img src="assets/images/EXT Organisation Logos/LIFE LINE.jpeg" alt="Lifeline SA Logo">
+                <h2>Lifeline South Africa</h2>
+                <p>Website: <a href="https://www.lifelinesa.co.za" target="_blank">www.lifelinesa.co.za</a></p>
+                <p>Email: <a href="mailto:safetalking@lifeline.co.za">safetalking@lifeline.co.za</a></p>
+                <p>Phone: 080 322 322</p>
+            </div>
+
+            <div class="contact-card">
+                <img src="assets/images/EXT Organisation Logos/SASSA.png" alt="SASSA SA Logo">
+                <h2>South African Social Services Agency (SASSA)</h2>
+                <p>Website: <a href="https://www.sassa.gov.za" target="_blank">www.sassa.org.za</a></p>
+                <p>Email: <a href="mailto:grantsenquiries@gsassagov.za">grantsenquiries@gsassagov.za</a></p>
+                <p>080 0601 011</p>
+            </div>
+
+            <div class="contact-card">
+                <img src="assets/images/EXT Organisation Logos/NCC.jpeg" alt="SASSA SA Logo">
+                <h2>The National Consumer Commission (TNCC)</h2>
+                <p>Website: <a href="https://www.thencc.co.za" target="_blank">www.thencc.co.za</a></p>
+                <p>Email: <a href="mailto:complaints@ncc.org.za">complaints@ncc.org.za</a></p>
+                <p>012 428 700</p>
+            </div>
+
+            
+            <!-- STC -->
+            <div class="contact-card">
+                <img src="assets/images/stc logo.png" alt="STC Logo">
+                <h2>Start The Conversation (STC)</h2>
+                <p>Phone: 011 282 0860</p>
+                <p>Email: <a href="mailto:info@stc.org.za">info@stc.org.za</a></p>
+                <p>Address: The Atrium on 5th, Sandton, Gauteng, South Africa</p>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+           <!-- Footer Start -->
+           <footer>
+            <div class="container-fluid bg-dark text-white-50 footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+                <div class="container py-5">
+                    <div class="row g-5">
+                        <div class="col-lg-3 col-md-6 text-center text-md-start">
+                            <img src="assets/images/stc logo.png" alt="" srcset="" width="40%;">
+                          
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <a class="btn btn-link" href="about.html"><h5>Home</h5></a>
+                            <a class="btn btn-link" href="services.html"><h5>Services</h5></a>
+                            <a class="btn btn-link" href="about.html"><h5>About Us</h5></a>
+                            <a class="btn btn-link" href="portolio.html"><h5>Gallery </h5></a>
+                            <a class="btn btn-link" href="izaka-contacts.html"><h5>Support</h5></a>
+                            <a class="btn btn-link" href="https://www.youtube.com/@stc101"><h5>Resources</h5></a>
+                            <a class="btn btn-link" href="privacy.html">Privacy Policy </a>
+                            <a class="btn btn-link" href="faq.html">FAQ</a>  
+                        </div>
+        
+                        <div class="col-lg-3 col-md-6">
+                            <h5 class="text-light mb-4">Information</h5>
+                            <p><i class="bi bi-geo-alt me-2"></i>The Atrium on 5th, 5th Street, Sandton
+                                Gauteng, South Africa</p>
+                            <p><i class="bi bi-telephone me-2"></i>011 282 0860</p>
+                            <p><i class="bi bi-envelope me-2"></i>info@stc.org.za</p>
+                          
+                        </div>
+                       
+                        <div class="col-lg-3 col-md-6">
+                            <h5 class="text-light mb-4">Newsletter</h5>
+                            <p>No spam – just the good stuff  to empower you.</p>
+                            <div class="position-relative mx-auto" style="max-width: 400px;">
+                                <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                                <button type="button" class="btn btn-outline-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 text-start text-md-start mb-3 mb-md-0">
+                                &copy; <a class="btn-link footer-small-p" href="https://stc.org.za">Start The Conversation, All Right Reserved.</a>
+                            </div>
+                            <div class="col-md-4 text-center text-md-center text-light">
+                                <p class="footer-small-p">Reg#: 2021/ 422037/ 08&nbsp; | &nbsp;PBO#: 930076289</p>
+                            </div>
+                            <div class="col-md-4 text-end text-md-end footer-small-p">
+                                Designed By <a class="btn-link footer-small-p" href="https://techxphere.co.za">TechXphere</a>
+                            </div>
+        
+                            
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </footer>
+            <!-- Footer End -->
+        
+        
+            <!-- Back to Top -->
+            <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+
+</body>
+</html>
