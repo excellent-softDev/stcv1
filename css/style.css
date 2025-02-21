@@ -73,10 +73,9 @@ a{
 /*** Topbar End ***/
 
 button.navbar-toggler{
-    border-color: #FF6F0F;
+    color: #FF6F0F !important;
+    
 }
-
-
 
 /*** Navbar ***/
 .navbar-light .navbar-nav .nav-link {
@@ -105,7 +104,7 @@ button.navbar-toggler{
 }
 
 .navbar-light .navbar-brand img {
-    max-height: 50px;
+    max-height: 100px;
     transition: .5s;
 }
 
@@ -137,7 +136,7 @@ button.navbar-toggler{
 }
 
 .dropdown .dropdown-menu a:hover {
-    background: var(--bs-primary);
+    background: #FF6F0F !important;
     color: var(--bs-white);
 }
 
@@ -157,7 +156,7 @@ button.navbar-toggler{
 
     .navbar.navbar-expand-lg .navbar-toggler {
         padding: 10px 20px;
-        border: 1px solid var(--bs-primary);
+        border: 1px solid red;
         color: var(--bs-primary);
     }
 
@@ -341,8 +340,6 @@ button.navbar-toggler{
 
 
 
-
-
 .rounded-pill {
     background-color: var(--primary);
     color: #F5F5F7;
@@ -401,6 +398,17 @@ p{
 .btn {
     font-weight: 500;
     transition: .5s;
+}
+.btn-secondary{
+    background-color: #7D0A0A;
+    color: #ffff !important;
+    border: none;
+}
+
+.btn-secondary:hover{
+    background-color: #FF6F0F;
+    color: #ffff !important;
+    border: none !important;
 }
 
 .btn-primary {
@@ -503,13 +511,57 @@ p{
     height: auto;
 }
 
-/* Adjust the position of the overlay icon */
-.icon-overlay {
-    width: 80px;  /* Default size */
-    height: auto;
+ /* Ensuring the overlapping squares are contained within a specific class */
+ .squares-container {
+    position: relative;
+    width: 300px; /* Increased container size */
+    height: 300px; /* Increased container size */
+    margin: 0 auto; /* Centers the container */
+}
+
+/* Styling each square individually */
+.square {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    width: 150px; /* Increased square size */
+    height: 150px; /* Increased square size */
+    border: 2px solid #690B22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures content doesn't overflow outside the square */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Added a larger shadow */
+}
+
+/* Adjustments for the image inside each square */
+.square img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the square without distortion */
+    object-position: center; /* Ensures the center of the image is prioritized */
+}
+
+.square:nth-child(1) {
+    top: 0;
+    left: 30px; /* Adjusted for the new size */
+    transform: rotate(-10deg);
+}
+
+.square:nth-child(2) {
+    top: 75px; /* Adjusted for the new size */
+    left: 75px; /* Adjusted for the new size */
+    transform: rotate(15deg);
+}
+
+.square:nth-child(3) {
+    top: 150px; /* Adjusted for the new size */
+    left: 0;
+    transform: rotate(-15deg);
+}
+
+.square:nth-child(4) {
+    top: 125px; /* Adjusted for the new size */
+    left: 125px; /* Adjusted for the new size */
+    transform: rotate(5deg);
 }
 
 /* Reduce icon size for smaller screens */
@@ -837,12 +889,6 @@ footer{
 .col p{
     color: white;
 }
-
-
-
-
-
-
 
 
 

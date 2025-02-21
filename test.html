@@ -1,71 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Responsive Design</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .icon-circle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-        }
-        .blue { background-color: #3483cb; }
-        .green { background-color: #7cc576; }
-        .orange { background-color: #f4a77c; }
-    </style>
-</head>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <body>
 
-<div class="container py-5">
-    <div class="row align-items-start mb-4">
-        <div class="col-auto">
-            <div class="icon-circle blue"></div>
-        </div>
-        <div class="col">
-            <p>
-                Start The Conversation (STC) is a committed team of individuals with a shared passion for driving financial literacy and empowerment.
-                 Our organization was founded on the belief that every person deserves access to 
-                 essential financial knowledge, opportunities, and tools to improve their quality of life.
-            </p>
-        </div>
-    </div>
+<canvas id="myChart" style="width:100%;"></canvas>
 
-    <div class="row align-items-start mb-4">
-        <div class="col-auto">
-            <div class="icon-circle green"></div>
-        </div>
-        <div class="col">
-            <p>
-                Our Vision IS to empower individuals and communities with financial knowledge that enables
-                 informed decision-making, sustainable wealth-building, and long-term financial independence.
-            </p>
-        </div>
-    </div>
+<script>
+const xValues = ["13-17 Yrs", "18-24 Yrs", "25-34 Yrs", "35-44 Yrs", "45-54 Yrs", "55-64 yrs", "65+ Yrs"];
+const yValues = [3.3, 18.3, 25.6, 25.7, 13.7, 7.7, 5.7];
+const barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#FF6500",
+  "#1e7145",
+  "#FEEC37",
+  "#A66E38"
+];
 
-    <div class="row align-items-start">
-        <div class="col-auto">
-            <div class="icon-circle orange"></div>
-        </div>
-        <div class="col">
-            <p>
-                Our Mission:
-                <ul>
-                    <li><strong>Provide accessible and engaging financial literacy education</strong> to individuals across South Africa.</li>
-                    <li><strong>Create awareness</strong> about personal finance, debt management, and savings strategies.</li>
-                    <li><strong>Encourage interactive learning</strong> through real-life experiences and practical money management skills.</li>
-                    <li><strong>Promote economic stability and growth</strong> by equipping people with the tools to make informed financial decisions.</li>
-                </ul>
-            </p>
-        </div>
-    </div>
-</div>
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Video watch time age"
+    }
+  }
+});
+</script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
